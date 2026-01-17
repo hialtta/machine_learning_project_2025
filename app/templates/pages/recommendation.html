@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <title>The Finder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.ico') }}" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+
+    <!-- Animations -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css') }}">
+
+    <!-- Hamburgers -->
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+
+    <!-- Select2 -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+
+    <div class="limiter">
+        <div class="container-project">
+            <div class="wrap-project">
+                <div class="container">
+                    <h2>The 5 Most Suitable Positions for You</h2>
+                    <p>Type something in the input field to search the table for each column:</p>
+                    <input class="form-control" id="searchTable" type="text" placeholder="Search..">
+                    <br>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Job Position</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableRec">
+                            {% for item in recommendations %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ item.Title }}</td>
+                                <td>
+                                    <a href="{{ item.jobstreet }}" target="_blank"
+                                        class="btn btn-sm btn-primary">JobStreet</a>
+                                    <a href="{{ item.linkedin }}" target="_blank"
+                                        class="btn btn-sm btn-info">LinkedIn</a>
+                                    <a href="{{ item.indeed }}" target="_blank"
+                                        class="btn btn-sm btn-secondary">Indeed</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <div class="text-center p-t-136">
+                        <a class="txt2" id="back1" href="/main_form">
+                            <i class="fa fa-long-arrow-left m-l-5" aria-hidden="true"></i>
+                            Back
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/popper.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+    <!-- Select2 -->
+    <script src="{{ url_for('static', filename='vendor/select2/select2.min.js') }}"></script>
+
+    <!-- Tilt -->
+    <script src="{{ url_for('static', filename='vendor/tilt/tilt.jquery.min.js') }}"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

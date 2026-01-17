@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>The Finder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.ico') }}" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+
+    <!-- Animations -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css') }}">
+
+    <!-- Hamburgers -->
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+
+    <!-- Select2 -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+
+    <div class="limiter">
+        <div class="container-project">
+            <div class="wrap-project">
+                <div class="project-pic js-tilt" data-tilt>
+                    <img src="{{ url_for('static', filename='images/img-01.png') }}" alt="IMG">
+                </div>
+
+                <form id="uploadCV" class="project-form validate-form" method="post" enctype="multipart/form-data">
+                    <span class="project-form-title">
+                        Upload your CV below:
+                    </span>
+
+                    <div class="wrap-input100 validate-input" data-validate="Invalid PDF file">
+                        <input class="input100-file" type="file" name="file_pdf" placeholder="CV"
+                            accept="application/pdf">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-upload" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="container-project-form-btn">
+                        <button id="submitButton" class="project-form-btn">
+                            Submit
+                        </button>
+                    </div>
+                    <div class="text-center p-t-136">
+                        <a class="txt2" id="" href="">
+                        </a>
+                    </div>
+                    <div id="loadingSpinner" class="loading-overlay" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Processing your CV... Please wait.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/popper.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+    <!-- Select2 -->
+    <script src="{{ url_for('static', filename='vendor/select2/select2.min.js') }}"></script>
+
+    <!-- Tilt -->
+    <script src="{{ url_for('static', filename='vendor/tilt/tilt.jquery.min.js') }}"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>
